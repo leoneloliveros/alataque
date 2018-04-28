@@ -1,14 +1,14 @@
 <h1>Problemas</h1>
-<table class="table table-striped">  
+<table class="table table-striped">
   <tbody>
-  	<% @issues.each do |issues|%>
+  	<% @issues.each do |issue|%>
     <tr>
-      <td><strong><%= issues.title %></strong>
-      	  Creado por <%= %> el <%= issues.created_at %>
+      <td><p><strong><%= issue.title %></strong></p>
+      	 <p> Creado por <%= issue.user.email%> el <%= issue.created_at %> </p>
       </td>
-      <td><%= issues.open ? Abierto : Cerrado %></td>
-      <td><%= link_to 'Ver', issue_path, class: "btn btn-secondary" %></td>
+      <td><%= issue.open ? "Abierto" : "Cerrado" %></td>
+      <td><%= link_to 'Ver', issue, class: "btn btn-secondary" %></td>
     </tr>
-    <% end %>    
+    <% end %>
   </tbody>
 </table>
