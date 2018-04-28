@@ -1,0 +1,14 @@
+<h1>Problemas</h1>
+<table class="table table-striped">  
+  <tbody>
+  	<% @issues.each do |issues|%>
+    <tr>
+      <td><strong><%= issues.title %></strong>
+      	  Creado por <%= %> el <%= issues.created_at %>
+      </td>
+      <td><%= issues.open ? Abierto : Cerrado %></td>
+      <td><%= link_to 'Ver', issue_path, class: "btn btn-secondary" %></td>
+    </tr>
+    <% end %>    
+  </tbody>
+</table>
